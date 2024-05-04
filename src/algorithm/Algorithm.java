@@ -27,7 +27,7 @@ public class Algorithm {
 			adjacency_list = new int[numWord][maxAdj];
 			words = new String[numWord];
 			hashMap = new HashMap<String, Integer>();
-			File adjTxt = new File("." + fileSeparator + "assets" + fileSeparator + "words_alpha.txt");
+			File adjTxt = new File("." + fileSeparator + "assets" + fileSeparator + "words_oracle.txt");
 			Scanner adjReader = new Scanner(adjTxt);
 			int index = 0;
 			while(index < numWord && adjReader.hasNextLine()) {
@@ -37,7 +37,7 @@ public class Algorithm {
 				hashMap.put(wordString, index);
 				index++;
 			}
-			File adjNumTxtFile = new File("." + fileSeparator + "assets" + fileSeparator + "adjNum.txt");
+			File adjNumTxtFile = new File("." + fileSeparator + "assets" + fileSeparator + "adjNumOracle.txt");
 			Scanner adjNumReaderScanner = new Scanner(adjNumTxtFile);
 			index = 0;
 			while (adjNumReaderScanner.hasNextLine()) {

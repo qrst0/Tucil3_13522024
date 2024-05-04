@@ -15,28 +15,30 @@ import java.io.FileInputStream;
 import java.io.InputStream;
 import java.text.NumberFormat;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Enumeration;
 import java.util.List;
 import java.util.Stack;
 
 import algorithm.*;
 import pair.Pair;
 
-import javax.imageio.plugins.tiff.GeoTIFFTagSet;
 import javax.swing.*;
+import javax.swing.border.LineBorder;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 import javax.swing.plaf.ColorUIResource;
-import javax.swing.plaf.basic.BasicOptionPaneUI.ButtonActionListener;
 import javax.swing.text.NumberFormatter;
 
 class Constants {
 	public static String fileSeparator = File.separator;
 	public static Font customFont = new Font(null);
+	public static Color boxColor = new Color(237,209,211);
 	public static void initConstants() {
 		try {
-		InputStream myStream = new BufferedInputStream(new FileInputStream("." + fileSeparator + "assets" + fileSeparator + "ARIALBD 1.TTF"));
+		InputStream myStream = new BufferedInputStream(new FileInputStream("." + fileSeparator + "assets" + fileSeparator + "Futura Bold.otf"));
 		customFont = Font.createFont(Font.TRUETYPE_FONT, myStream).deriveFont(20f);
 		}catch(Exception e) {
 			
@@ -73,17 +75,18 @@ final class InputBox {
 			jte.setPreferredSize(new Dimension(50, 50));
 			String textString = "" + inputString.charAt(i);
 			jte.setText(textString);
+			jte.setBackground(Constants.boxColor);
 			//fields[i].setBackground(new Color(211,211,211));
-			jte.setBorder(BorderFactory.createLineBorder(new Color(211,211,211), 2));
+			jte.setBorder(BorderFactory.createLineBorder(new Color(51,51,51), 3));
 			if(i == diff) {
-				jte.setBorder(BorderFactory.createLineBorder(new Color(255, 195, 0), 5));
+				jte.setBorder(BorderFactory.createLineBorder(new Color(237, 130, 0), 5));
 			}
 			jte.setHorizontalAlignment(JTextField.CENTER);
 			jte.setFont(Constants.customFont);
 			jte.setEditable(false);
 			if(inputString.charAt(i) == endString.charAt(i)) {
 				//System.out.println("HERE");
-				jte.setBackground(new Color(64,224,208));
+				jte.setBackground(new Color(110, 237, 133));
 			}
 			//jte.setOpaque(true);
 			fields.add(jte);
@@ -104,8 +107,10 @@ final class InputBox {
 		for(int i = 0; i < n; ++i) {
 			ExtendedTextField jte = new ExtendedTextField(i);
 			jte.setPreferredSize(new Dimension(50, 50));
+			//jte.setOpaque(false);
+			jte.setBackground(Constants.boxColor);
 			//fields[i].setBackground(new Color(211,211,211));
-			jte.setBorder(BorderFactory.createLineBorder(new Color(211,211,211), 2));
+			jte.setBorder(BorderFactory.createLineBorder(new Color(51,51,51), 3));
 			jte.setHorizontalAlignment(JTextField.CENTER);
 			jte.setFont(Constants.customFont);
 			jte.setText(" ");
@@ -189,9 +194,10 @@ final class InputBox {
 				ExtendedTextField newJTextField = new ExtendedTextField(this.n);
 				newJTextField.setPreferredSize(new Dimension(50, 50));
 				//fields[i].setBackground(new Color(211,211,211));
-				newJTextField.setBorder(BorderFactory.createLineBorder(new Color(211,211,211), 2));
+				newJTextField.setBorder(BorderFactory.createLineBorder(new Color(51,51,51), 3));
 				newJTextField.setHorizontalAlignment(JTextField.CENTER);
 				newJTextField.setFont(Constants.customFont);
+				newJTextField.setBackground(Constants.boxColor);
 				newJTextField.setText(" ");
 				newJTextField.setCaretPosition(1);
 				newJTextField.getDocument().addDocumentListener(new DocumentListener() {
@@ -388,12 +394,12 @@ class ResultDialog {
 		} else {
 		JLabel nosolLabel = new JLabel("Tidak ada solusi! :(");
 		nosolLabel.setFont(Constants.customFont.deriveFont(20f));
-		nosolLabel.setForeground(Color.red);
+		nosolLabel.setForeground(new Color(255, 87, 98));
 		nosolLabel.setHorizontalAlignment(JLabel.CENTER);
 		mainPanel.add(nosolLabel, gridBagConstraints);
 		}
 		JScrollPane scrPane = new JScrollPane(mainPanel);
-		mainPanel.setBackground(Color.white);
+		mainPanel.setBackground(new Color(110,211,237));
 		dialRanDialog.add(scrPane);
 		dialRanDialog.setVisible(true);
 		
@@ -408,9 +414,22 @@ class ResultDialog {
 
 public class Gui {
 	protected Algorithm algorithm;
+	
+	public static void printUIManagerKeys()
+	{
+	    UIDefaults defaults = UIManager.getDefaults();
+	    Enumeration<Object> keysEnumeration = defaults.keys();
+	    ArrayList<Object> keysList = Collections.list(keysEnumeration);
+	    for (Object key : keysList)
+	    {
+	        System.out.println(key);
+	    }
+	}
+	
 	public void start() {
 		try {
 			UIManager.setLookAndFeel(UIManager.getCrossPlatformLookAndFeelClassName());
+			
 			/*
 			UIManager.put("ComboBox.background", new ColorUIResource(Color.yellow));
 	        UIManager.put("JTextField.background", new ColorUIResource(Color.yellow));
@@ -422,7 +441,9 @@ public class Gui {
 		}
 		algorithm = new Algorithm();
 		Constants.initConstants();
+		ImageIcon img = new ImageIcon("." + Constants.fileSeparator + "assets" + Constants.fileSeparator + "ladder2.png");
 		JFrame jFrame = new JFrame();
+		jFrame.setIconImage(img.getImage());
 		JPanel mainPanel = new JPanel();
 		jFrame.setSize(500, 500);
 		jFrame.setMinimumSize(new Dimension(600, 600));
@@ -454,6 +475,8 @@ public class Gui {
 		jFormattedTextField.setHorizontalAlignment(JFormattedTextField.CENTER);
 		jFormattedTextField.setFont(Constants.customFont.deriveFont(15f));
 		jFormattedTextField.setText("4");
+		jFormattedTextField.setBackground(Constants.boxColor);
+		jFormattedTextField.setBorder(new LineBorder(new Color(51,51,51), 3));
 		
 		JLabel startJLabel = new JLabel();
 		startJLabel.setFont(Constants.customFont.deriveFont(14f));
@@ -495,7 +518,7 @@ public class Gui {
 		//gridBagConstraints.gridwidth = 250;
 		mainPanel.add(startJLabel, gridBagConstraints);
 		JLabel labelTransparent = new JLabel();
-		labelTransparent.setPreferredSize(new Dimension(100, 50));
+		labelTransparent.setPreferredSize(new Dimension(100, 10));
 		gridBagConstraints.gridy = 3;
 		gridBagConstraints.gridx = 0;
 		mainPanel.add(inputBox.panel, gridBagConstraints);
@@ -517,8 +540,12 @@ public class Gui {
 		JRadioButton gbfsJRadioButton = null;
 		
 		try {
+
 			
 		UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+		//.put("RadioButton.light", new ColorUIResource(Color.blue));
+		
+		//printUIManagerKeys();
 		
 		ucsRadioButton = new JRadioButton("UCS");
 		ucsRadioButton.setFont(Constants.customFont.deriveFont(12f));
@@ -550,7 +577,7 @@ public class Gui {
 		
 		JPanel buttonPanel = new JPanel();
 		buttonPanel.setLayout(new GridLayout(1, 3));
-		buttonPanel.setBackground(Color.white);
+		buttonPanel.setOpaque(false);
 		
 		buttonPanel.add(ucsRadioButton);
 		buttonPanel.add(astaRadioButton);
@@ -566,18 +593,18 @@ public class Gui {
 	    butRandGo.setPreferredSize(new Dimension(100, 30));
 	    butRandGo.setOpaque(true);
 	    butRandGo.setContentAreaFilled(true);
-	    butRandGo.setBackground(Color.white);
-	    butRandGo.setBorder(BorderFactory.createLineBorder(new Color(211,211,211), 2));
+	    butRandGo.setBackground(Constants.boxColor);
+	    butRandGo.setBorder(BorderFactory.createLineBorder(new Color(51,51,51), 3));
 	    butRandGo.setFont(Constants.customFont.deriveFont(20f));
-	    butRandGo.setForeground(Color.black);
+	    //butRandGo.setForeground(Color.black);
 	    butRandGo.setFocusPainted(false);
 	    butRandGo.getModel().addChangeListener(new ChangeListener() {
 			public void stateChanged(ChangeEvent e) {
 				ButtonModel model = (ButtonModel) e.getSource();
 				if(model.isRollover()) {
-					butRandGo.setBackground(new Color(211,211,211));
+					butRandGo.setBackground(new Color(252, 149, 156));
 				}else {
-					butRandGo.setBackground(Color.white);
+					butRandGo.setBackground(Constants.boxColor);
 				}
 			}
 		});
@@ -587,7 +614,7 @@ public class Gui {
 	    mainPanel.add(butRandGo, gridBagConstraints);
 		
 		
-		mainPanel.setBackground(Color.white);
+		mainPanel.setBackground(new Color(110,211,237));
 		jFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		JScrollPane scrPane = new JScrollPane(mainPanel);
 		jFrame.add(scrPane);
