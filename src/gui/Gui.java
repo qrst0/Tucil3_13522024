@@ -331,7 +331,7 @@ class ResultDialog {
 		solLabel.setHorizontalAlignment(JLabel.CENTER);
 		
 		UIManager.put("TextField.inactiveBackground", new ColorUIResource(Color.white));
-		JDialog dialRanDialog = new JDialog(parent, "Solution", true);
+		JDialog dialRanDialog = new JDialog(parent, "Solusi", true);
 		JPanel mainPanel = new JPanel();
 		dialRanDialog.setSize(new Dimension(500, 550));
 		dialRanDialog.setMinimumSize(new Dimension(500, 550));
@@ -442,7 +442,7 @@ public class Gui {
 		algorithm = new Algorithm();
 		Constants.initConstants();
 		ImageIcon img = new ImageIcon("." + Constants.fileSeparator + "assets" + Constants.fileSeparator + "ladder2.png");
-		JFrame jFrame = new JFrame();
+		JFrame jFrame = new JFrame("Pemecah Word Ladder");
 		jFrame.setIconImage(img.getImage());
 		JPanel mainPanel = new JPanel();
 		jFrame.setSize(500, 500);
