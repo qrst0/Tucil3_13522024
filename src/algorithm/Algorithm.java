@@ -20,13 +20,14 @@ public class Algorithm {
 	protected String[] words;
 	final int numWord = 370105;
 	final int maxAdj = 52;
+	public static String fileSeparator = File.separator;
 	protected HashMap<String, Integer> hashMap;
 	public Algorithm(){
 		try {
 			adjacency_list = new int[numWord][maxAdj];
 			words = new String[numWord];
 			hashMap = new HashMap<String, Integer>();
-			File adjTxt = new File("D:\\Downloads\\words_alpha.txt");
+			File adjTxt = new File("." + fileSeparator + "assets" + fileSeparator + "words_alpha.txt");
 			Scanner adjReader = new Scanner(adjTxt);
 			int index = 0;
 			while(index < numWord && adjReader.hasNextLine()) {
@@ -36,7 +37,7 @@ public class Algorithm {
 				hashMap.put(wordString, index);
 				index++;
 			}
-			File adjNumTxtFile = new File("D:\\Kuliah\\Sem4\\Stima\\Tucil3\\adjNum.txt");
+			File adjNumTxtFile = new File("." + fileSeparator + "assets" + fileSeparator + "adjNum.txt");
 			Scanner adjNumReaderScanner = new Scanner(adjNumTxtFile);
 			index = 0;
 			while (adjNumReaderScanner.hasNextLine()) {

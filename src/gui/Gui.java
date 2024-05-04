@@ -10,6 +10,7 @@ import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.BufferedInputStream;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStream;
 import java.text.NumberFormat;
@@ -31,10 +32,11 @@ import javax.swing.plaf.basic.BasicOptionPaneUI.ButtonActionListener;
 import javax.swing.text.NumberFormatter;
 
 class Constants {
+	public static String fileSeparator = File.separator;
 	public static Font customFont = new Font(null);
 	public static void initConstants() {
 		try {
-		InputStream myStream = new BufferedInputStream(new FileInputStream("D:\\Downloads\\ARIALBD.TTF"));
+		InputStream myStream = new BufferedInputStream(new FileInputStream("." + fileSeparator + "assets" + fileSeparator + "ARIALBD 1.TTF"));
 		customFont = Font.createFont(Font.TRUETYPE_FONT, myStream).deriveFont(20f);
 		}catch(Exception e) {
 			
