@@ -26,7 +26,7 @@ GUI yang dibuat pada tugas ini bertujuan untuk memberikan jarak terpendek dari s
    
    ![input length](https://github.com/qrst0/Tucil3_13522024/blob/main/assets/choose_length.PNG)
    
-2. Masukkan kata awal dan akhir
+2. Masukkan kata awal dan akhir serta algoritma
    
    ![input algoritm and words](https://github.com/qrst0/Tucil3_13522024/blob/main/assets/choose_word_algo.PNG)
    
