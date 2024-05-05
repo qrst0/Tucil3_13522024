@@ -17,7 +17,7 @@ GUI yang dibuat pada tugas ini bertujuan untuk memberikan jarak terpendek dari s
 
 1. Download ZIP atau clone repository
 2. Jalankan program terminal (misalnya Command Prompt, Powershell, dan semacamnya).
-3. Pindah current directory ke folder Tucil3_13522024, yaitu `(folder download)\Tucil1_13522024`.
+3. Pindah current directory ke folder Tucil3_13522024, yaitu `(folder download)\Tucil3_13522024`.
 4. Jalankan command `java -cp bin caller.Caller` untuk memulai program.
 
 <h2 id="usage">🎨 Penggunaan</h2>
