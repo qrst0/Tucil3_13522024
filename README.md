@@ -54,5 +54,4 @@ GUI yang dibuat pada tugas ini bertujuan untuk memberikan jarak terpendek dari s
       </a>
     </th>
   </tr>
-  <tr>
 </table>
