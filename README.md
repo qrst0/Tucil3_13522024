@@ -24,15 +24,15 @@ GUI yang dibuat pada tugas ini bertujuan untuk memberikan jarak terpendek dari s
 
 1. Masukkan panjang kata yang ingin digunakan
    
-   ![input titles](https://github.com/ninoaddict/Tubes2_FE_Pembalap-Kapas/blob/main/img/pic1.png)
+   ![input length](https://github.com/qrst0/Tucil3_13522024/blob/main/assets/choose_length.PNG)
    
 2. Masukkan kata awal dan akhir
    
-   ![input algoritm and solution number](https://github.com/ninoaddict/Tubes2_FE_Pembalap-Kapas/blob/main/img/pic2.png)
+   ![input algoritm and words]([https://github.com/ninoaddict/Tubes2_FE_Pembalap-Kapas/blob/main/assets/pic2.png](https://github.com/qrst0/Tucil3_13522024/blob/main/assets/choose_word_algo.PNG))
    
 3. Klik tombol Go untuk menjalankan algoritma dan melihat hasil
    
-   ![click search](https://github.com/ninoaddict/Tubes2_FE_Pembalap-Kapas/blob/main/img/pic3.png)
+   ![click search](https://github.com/qrst0/Tucil3_13522024/blob/main/assets/solution.PNG)
 
 <h2 id="author">🙇‍♂️ Kontributor</h2>
 <table>
