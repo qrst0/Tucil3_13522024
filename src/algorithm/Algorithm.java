@@ -67,7 +67,7 @@ public class Algorithm {
 		return hashMap.containsKey(checkExistString);
 	}
 	
-	public static Integer hamiltonianDistance(String s1, String s2) {
+	public static Integer hammingDistance(String s1, String s2) {
 		int cnt = 0;
 		for(int i = 0; i < s1.length(); ++i) {
 			if(s1.charAt(i) != s2.charAt(i)) cnt++;
@@ -84,12 +84,12 @@ public class Algorithm {
 		Set<Integer> visitedSet = new HashSet<Integer>();
 		HashMap<Integer, Integer> prevHashMap = new HashMap<Integer, Integer>();
 		ArrayList<String> resultArrayList = new ArrayList<String>();
-		pQueue.add(new Pair<Integer, Pair<Integer,Integer>>(hamiltonianDistance(s1, s2), new Pair<Integer, Integer>(a, -1)));
+		pQueue.add(new Pair<Integer, Pair<Integer,Integer>>(hammingDistance(s1, s2), new Pair<Integer, Integer>(a, -1)));
 		while(!pQueue.isEmpty()) {
 			Pair<Integer, Pair<Integer, Integer>> topQPair = pQueue.peek();
 			pQueue.remove();
 			if(visitedSet.contains(topQPair.second.first)) continue;
-			topQPair.first -= hamiltonianDistance(words[topQPair.second.first], s2);
+			topQPair.first -= hammingDistance(words[topQPair.second.first], s2);
 			//System.out.println("Value: " + topQPair.first);
 			visitedSet.add(topQPair.second.first);
 			prevHashMap.put(topQPair.second.first, topQPair.second.second);
@@ -104,7 +104,7 @@ public class Algorithm {
 				return new Pair<ArrayList<String>, Pair<Integer,Integer>>(resultArrayList, new Pair<Integer, Integer>((int)seconds, visitedSet.size()));
 			}
 			for(int i = 0; i < maxAdj && adjacency_list[topQPair.second.first][i] != -1; i++) {
-				pQueue.add(new Pair<Integer, Pair<Integer, Integer>>(topQPair.first + 1 + hamiltonianDistance(words[adjacency_list[topQPair.second.first][i]], s2), new Pair<Integer, Integer>(adjacency_list[topQPair.second.first][i], topQPair.second.first)));
+				pQueue.add(new Pair<Integer, Pair<Integer, Integer>>(topQPair.first + 1 + hammingDistance(words[adjacency_list[topQPair.second.first][i]], s2), new Pair<Integer, Integer>(adjacency_list[topQPair.second.first][i], topQPair.second.first)));
 			}
 		}
 		return new Pair<ArrayList<String>, Pair<Integer,Integer>>(resultArrayList, new Pair<Integer, Integer>(-1, -1));
@@ -165,7 +165,7 @@ public class Algorithm {
 			int dest = -1;
 			int maxi = Integer.MAX_VALUE;
 			for(int i = 0; i < maxAdj && adjacency_list[a][i] != -1; i++) {
-				int c = hamiltonianDistance(words[adjacency_list[a][i]], s2);
+				int c = hammingDistance(words[adjacency_list[a][i]], s2);
 				if(c < maxi) {
 					dest = adjacency_list[a][i];
 					maxi = c;
