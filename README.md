@@ -9,9 +9,13 @@ GUI yang dibuat pada tugas ini bertujuan untuk memberikan jarak terpendek dari s
 <h2 id="table-of-contents">🔍 Daftar Isi</h2>
 - <a href="#description">Deskripsi</a><br/>
 - <a href="#table-of-contents">Daftar Isi</a><br/>
+- <a href="#requirements">Syarat</a></br>
 - <a href="#how-to-run">Menjalankan Program</a><br/>
 - <a href="#usage">Penggunaan</a><br/>
 - <a href="#author">Kontributor</a>
+
+<h2 id="requirements">📒 Syarat</h2>
+Java 21 ke atas
 
 <h2 id="how-to-run">🚶 Menjalankan Program</h2>
 
