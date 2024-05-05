@@ -28,7 +28,7 @@ GUI yang dibuat pada tugas ini bertujuan untuk memberikan jarak terpendek dari s
    
 2. Masukkan kata awal dan akhir
    
-   ![input algoritm and words]([https://github.com/ninoaddict/Tubes2_FE_Pembalap-Kapas/blob/main/assets/pic2.png](https://github.com/qrst0/Tucil3_13522024/blob/main/assets/choose_word_algo.PNG))
+   ![input algoritm and words](https://github.com/qrst0/Tucil3_13522024/blob/main/assets/choose_word_algo.PNG)
    
 3. Klik tombol Go untuk menjalankan algoritma dan melihat hasil
    
