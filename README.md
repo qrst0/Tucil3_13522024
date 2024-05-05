@@ -1,3 +1,6 @@
+> [!NOTE]  
+> Program membutuhkan Java 21 ke atas
+
 <h1 align="center">💬 Word Ladder 💬</h1>
 <h2 id="description">✨ Deskripsi </h2>
 
@@ -14,8 +17,6 @@ GUI yang dibuat pada tugas ini bertujuan untuk memberikan jarak terpendek dari s
 - <a href="#author">Kontributor</a>
 
 <h2 id="how-to-run">🚶 Menjalankan Program</h2>
-> [!NOTE]  
-> Program membutuhkan Java 21 ke atas
 1. Download ZIP atau clone repository
 2. Jalankan program terminal (misalnya Command Prompt, Powershell, dan semacamnya).
 3. Pindah current directory ke folder Tucil3_13522024, yaitu `(folder download)\Tucil3_13522024`.
